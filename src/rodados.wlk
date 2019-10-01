@@ -1,4 +1,4 @@
-class ChevroletCorsa {
+class ChevroletCorsa{
   	var property color
   	
   	method capacidad() {return 4}
@@ -7,7 +7,7 @@ class ChevroletCorsa {
 }
 
 class RenaultKwid {
-  	var tieneTanqueAdicional
+  	var tieneTanqueAdicional = true
 	method capacidad() {
     	if (tieneTanqueAdicional) {return 3} 
     	else {return 4}  
@@ -30,13 +30,14 @@ object trafic {
 	
   	method peso() {return 4000 + motor.peso() + interior.peso()}
   	method color() { return blanco}
-  	
+  	method velocidadMaxima() {return motor.velocidadMaxima()}
   	
 }
 
-// una opción: clase Motor
-class Motor {
-	var property bataton 
+/* una opción: clase Motor
+
+	
+	var property pulenta
 	method peso(){
 		if (bataton) { return 500}
 		else { return 800}
@@ -59,14 +60,16 @@ class Interior {
 		else { return 700}
 	}
 }
-
+*/
 // otra opción: un objeto x cada motor
-/*object bataton {
+object bataton {
   method peso() { return 500 }
+  method capacidad(){ }
 }
 object pulenta {
   // ...
-}*/
+}
+
 
 class AutoEspecial {
 	var property peso
@@ -78,7 +81,7 @@ class AutoEspecial {
 
 // sería como el depósito, maneja una colección de rodados
 class Dependencia {
-	var property empleados = []
+	var property empleados
 	var property flotaDeRodados = []
 	
 	method agregarAFlota(rodado){ flotaDeRodados.add(rodado)}
@@ -98,25 +101,23 @@ class Dependencia {
 		return flotaDeRodados.max({rodado => rodado.velocidadMaxima()}).color()
 	}
 	method capacidadFaltante(){
-		return 	flotaDeRodados.sum({rodado => rodado.capacidad()}) - empleados.size()
+		return 	empleados.size() - flotaDeRodados.sum({rodado => rodado.capacidad()})  
 	}
 	method esGrande(){
 		return flotaDeRodados.size() >= 5 and empleados.size() >= 40
 	}
 	
-	
-	
-	
-	
-	
 }
+
+
 
 // recordamos: los colores con objetos vacíos, no como String
 object azul {}
 object rojo {}
 object verde {}
 object blanco {}
-
+object beige {}
+object negro {}
 
 // un ejemplo de cómo configurar la trafic en un test
 /*test "pruebo la trafic" {

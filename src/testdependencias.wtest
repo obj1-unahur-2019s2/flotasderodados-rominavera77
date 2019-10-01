@@ -1,0 +1,59 @@
+import rodados.*
+
+
+	
+describe "depencias" {
+	
+	var cachito = new ChevroletCorsa(color=rojo)
+	var deportes = new Dependencia(empleados=45)
+	var corsa1 = new ChevroletCorsa(color=verde)
+	var corsa2 = new ChevroletCorsa(color=azul)
+	var kwid = new RenaultKwid()
+	var autoEspecial1 = new AutoEspecial(capacidad=5, velocidadMaxima=160, peso=1200, color=beige)
+	
+	
+	var cultura = new Dependencia(empleados=21)
+	var kwid1 = new RenaultKwid()
+	var kwid2 = new RenaultKwid()
+	var kwid3 =new RenaultKwid (tieneTanqueAdicional=false )
+                                  
+
+fixture {
+	
+	deportes.agregarAFlota(cachito)
+	deportes.agregarAFlota(corsa1)
+	deportes.agregarAFlota(corsa2)
+	deportes.agregarAFlota(kwid)
+	deportes.agregarAFlota(autoEspecial1)
+	
+	cultura.agregarAFlota(cachito)
+	cultura.agregarAFlota(kwid1)
+	cultura.agregarAFlota(kwid2)
+	cultura.agregarAFlota(kwid3)
+	trafic.motor(bataton)
+	trafic.interior()
+	cultura.agregarAFlota(trafic())
+	
+	
+}
+test "dependencia Deportes"{
+	assert.equals(6450,deportes.pesoTotalFlota())
+	assert.that(deportes.estaBienEquipada())
+	assert.equals(7,capacidadTotalEnColor(azul))
+	assert.equals(beige,colorDelRodadoMasRapido())	
+	assert.equals(25,capacidadFaltante())
+	assert.that(esGrande())
+
+}
+                                                                                                                                                   
+	
+	
+test "dependencia Cultura"{
+	assert.equals(9500,deportes.pesoTotalFlota())
+	assert.notThat(cultura.estaBienEquipada())
+	assert.equals(10,capacidadTotalEnColor(azul))
+	assert.equals(azul,colorDelRodadoMasRapido())	
+	assert.equals(5,capacidadFaltante())
+	assert.that(esGrande())	
+}
+}

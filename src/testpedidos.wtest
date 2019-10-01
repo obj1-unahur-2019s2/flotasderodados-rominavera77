@@ -1,0 +1,23 @@
+import rodados.*
+import pedidos.*
+
+describe "Pedidos"{
+	//inicializo las clases y variables
+	
+	var cachito = new ChevroletCorsa(color=rojo)	
+	var pedido1 = new Pedido(distancia=960, tiempoMaximo=8, cantidadDePasajeros=4, coloresIncompatibles =#{negro,azul})
+	var pedido2 = new Pedido(distancia=960, tiempoMaximo=8, cantidadDePasajeros=6, coloresIncompatibles =#{negro,azul,rojo})
+
+test "pedido 1" {
+	// hago los assert
+	
+	assert.that(pedido1.puedeSatisfacerPedido(cachito))
+}
+
+test "pedido 2"{
+		assert.notThat(pedido2.puedeSatisfacerPedido(cachito))
+	
+}
+
+}
+
