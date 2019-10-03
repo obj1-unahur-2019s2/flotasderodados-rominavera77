@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>D:\carlos\educ\obj1\proyectosSueltos\flotasDeRodados\.README.md.html</title>
+<title>C:\Users\Usuario\Desktop\Wollok\Flotas de Rodados 2\flotasderodados-rominavera77\.README.md.html</title>
 
 
 <style type="text/css">
@@ -640,6 +640,7 @@ function setDocumentScrollTop(ypos)
 </head>
 <body class="markdown-body">
 <h1> <a id="flotas-de-rodados" class="anchor" href="#flotas-de-rodados" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Flotas de rodados</h1> 
+<p><a href="https://travis-ci.org/wollok/flotasDeRodados" rel="nofollow"><img src="https://camo.githubusercontent.com/66e13e13b5f508fb3d6447605d46443dc2bb1ee3/68747470733a2f2f7472617669732d63692e6f72672f776f6c6c6f6b2f666c6f7461734465526f6461646f732e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/wollok/flotasDeRodados.svg?branch=master" style="max-width:100%;" /></a></p> 
 <p>En este ejercicio vamos a construir un modelo que pueda servir para la administraci&oacute;n de las flotas de rodados que utilizan las distintas dependencias de la Municipalidad de Coronel Vallejos.</p> 
 <h2> <a id="etapa-1---rodados-y-dependencias" class="anchor" href="#etapa-1---rodados-y-dependencias" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Etapa 1 - Rodados y dependencias</h2> 
 <p>De cada <strong>rodado</strong> nos van a interesar: <em>capacidad</em> (o sea, cu&aacute;ntos pasajeros puede transportar), <em>velocidad m&aacute;xima</em>, <em>color</em> y <em>peso</em>.</p> 
@@ -690,7 +691,7 @@ function setDocumentScrollTop(ypos)
 <p><strong>Megaimportante</strong></p> 
 <p>Hacer el diagrama de objetos correspondiente a este test.</p> 
 <h2> <a id="etapa-2-modelo-de-pedidos" class="anchor" href="#etapa-2-modelo-de-pedidos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Etapa 2: modelo de pedidos</h2> 
-<p>Agregar al modelo los <strong>pedidos</strong> de translados que se generan en la municipalidad.<br /> Cada pedido especifica: la <em>distancia</em> a recorrer (expresada en kil&oacute;metros), el <em>tiempo m&aacute;ximo</em> en que se puede hacer el viaje (expresado en horas), la <em>cantidad de pasajeros</em> a transportar, y tambi&eacute;n un conjunto de <em>colores incompatibles</em>, o sea, que los pasajeros rechazan hacer el viaje en autos de esos colores.<br /> La <em>velocidad requerida</em> de un pedido es el resultado de dividir la cantidad de kil&oacute;metros por el tiempo m&aacute;ximo. P.ej. si para un pedido de un viaje de 480 kil&oacute;metros se indica como tiempo m&aacute;ximo 6 horas, entonces la velocidad requerida de este pedido es de 80 kms/hora (480 / 6 = 80).</p> 
+<p>Agregar al modelo los <strong>pedidos</strong> de translados que se generan en la municipalidad.<br /> Cada pedido especifica: la <em>distancia</em> a recorrer (expresada en kil&oacute;metros), el <em>tiempo m&aacute;ximo</em> en que se puede hacer el viaje(expresado en horas), la <em>cantidad de pasajeros</em> a transportar, y tambi&eacute;n un conjunto de <em>colores incompatibles</em>, o sea, que los pasajeros rechazan hacer el viaje en autos de esos colores.<br /> La <em>velocidad requerida</em> de un pedido es el resultado de dividir la cantidad de kil&oacute;metros por el tiempo m&aacute;ximo. P.ej. si para un pedido de un viaje de 480 kil&oacute;metros se indica como tiempo m&aacute;ximo 6 horas, entonces la velocidad requerida de este pedido es de 80 kms/hora (480 / 6 = 80).</p> 
 <p>Agregar la capacidad de preguntar <em>si un auto puede satisfacer un pedido</em>, envi&aacute;ndole un mensaje al viaje con el auto como par&aacute;metro.</p> 
 <p>Para que un auto pueda satisfacer un pedido se tienen que dar tres condiciones:</p> 
 <ul> 
@@ -716,8 +717,31 @@ function setDocumentScrollTop(ypos)
  <li>dado un color, si es cierto que <em>todos</em> los pedidos registrados lo tienen como color incompatible.</li> 
 </ul> 
 <p>Tambi&eacute;n debe ser posible, enviando un mensaje al objeto que representa a una dependencia, <em>relajar</em> todos los pedidos que tenga registrados.</p> 
-<h2> <a id="extra---un-peque&ntilde;o-desaf&iacute;o" class="anchor" href="#extra---un-peque%C3%B1o-desaf%C3%ADo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extra - un peque&ntilde;o desaf&iacute;o</h2> 
-<p>Agregar un m&eacute;todo m&aacute;s a las dependencias, que devuelva el conjunto de colores que son incompatibles para, al menos, un pedido. Los curiosos pueden investigar el m&eacute;todo <code>fold</code>; ver el apunte sobre colecciones que est&aacute; en el sitio. Algo se explica en el apunte n&uacute;mero 12 de la serie de apuntes que est&aacute; en <a href="https://wollok.org" rel="nofollow">wollok.org</a>.</p> 
+<h2> <a id="extra---un-poco-de-geograf&iacute;a" class="anchor" href="#extra---un-poco-de-geograf%C3%ADa" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extra - un poco de geograf&iacute;a</h2> 
+<p>Agregarle a los Chevrolet Corsa una <code>Position</code> que indique su ubicaci&oacute;n en un mapa de coordenadas. Supongamos que el mapa incluye las posiciones desde (0,0) hasta (15,15). La clase <code>Position</code> &quot;viene con Wollok&quot;, pero para usarla hay que incluir este import:</p> 
+<pre><code>import wollok.game.*
+</code></pre> 
+<p>Este c&oacute;digo crea una instancia de <code>Position</code>: <code>new Position(x = 4, y = 7)</code>. Para ver qu&eacute; mensajes entienden estos objetos, mirar en <a href="https://www.wollok.org/documentacion/wollokdoc/" rel="nofollow">https://www.wollok.org/documentacion/wollokdoc/</a>, entrar por &quot;game.wlk&quot; y buscar la clase &quot;Position&quot;.</p> 
+<p>Por otro lado, definir objetos que representen a las distintas direcciones, por ejemplo <code>norte</code>, <code>sur</code>, etc., de forma tal que a un veh&iacute;culo se le pueda decir: <code>moverseHacia(direccion)</code>. P.ej. si se crea un veh&iacute;culo as&iacute;:</p> 
+<pre><code>var miAutito = new ChevroletCorsa(posicion = new Position(x=3,y=6), ...)
+</code></pre> 
+<p>y despu&eacute;s se hace <code>miAutito.moverse(norte)</code>, la posici&oacute;n del veh&iacute;culo deber&iacute;a pasar a ser (3,7).</p> 
+<p>Despu&eacute;s, agregarle estos m&eacute;todos:</p> 
+<ul> 
+ <li><code>repetirUltimoMovimiento()</code></li> 
+ <li><code>pasoPor(posicion)</code></li> 
+ <li> <code>estaEn(region)</code> donde hay que crear los objetos que representan regiones. Arranquemos con regiones rectangulares, por ejemplo del (3,3) al (5,8).</li> 
+</ul> 
+<p>Despu&eacute;s de esto, lograr que los objetos que representan regiones entiendan los mensajes <code>union(region)</code> e <code>interseccion(region)</code>, que devuelven las regiones que se indica. &iexcl;OJO! que la uni&oacute;n, o la intersecci&oacute;n, de dos regiones rectangulares, puede no ser rectangular.</p> 
+<h2> <a id="extra---desaf&iacute;os-con-colecciones" class="anchor" href="#extra---desaf%C3%ADos-con-colecciones" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extra - desaf&iacute;os con colecciones</h2> 
+<p>Agregar m&eacute;todos a las dependencias que permitan obtener:</p> 
+<ul> 
+ <li>el conjunto de colores que son incompatibles para, al menos, un pedido. Los curiosos pueden investigar el m&eacute;todo <code>flatten</code>; ver el apunte sobre colecciones que est&aacute; en el sitio.</li> 
+ <li>el color m&aacute;s popular. P.ej. si una dependencia tiene tres veh&iacute;culos blancos, dos azules y uno negro, entonces el color m&aacute;s popular es el blanco.</li> 
+ <li>si se repite alg&uacute;n color, o sea si de alg&uacute;n color hay m&aacute;s de un veh&iacute;culo. Ac&aacute; puede servir <code>occurrencesOf(element)</code>, ver la documentaci&oacute;n de Wollok o el apunte de colecciones.</li> 
+ <li>si los veh&iacute;culos de una dependencia est&aacute;n en una lista, se puede pensar que est&aacute;n registrados seg&uacute;n el orden en el que se fueron incorporando. Agregar un m&eacute;todo <code>ordenDeLlegada(vehiculo)</code>: el primer veh&iacute;culo en llegar tendr&aacute; orden 1, el segundo 2, etc..<br /> <strong>Sugerencia</strong>: while no hay, se van a tener que recorrer todos los veh&iacute;culos, no hay problema. Puede venir c&oacute;modo recorrer <em>los &iacute;ndices</em>, para eso probar estas expresiones en un REPL: <code>(0..4)</code>, <code>(0..4).map({n =&gt; n * 2})</code>. Recordar que: hay que cortar en <code>vehiculos.size() - 1</code>, y que a partir del &iacute;ndice se puede acceder al elemento usando <code>get(indice)</code>.</li> 
+ <li>a partir del anterior, y mirando <code>take</code>, implementar <code>vehiculosQueLlegaronAntesQue(veh)</code>, que son los que aparecen antes en la lista.</li> 
+</ul> 
 <h2> <a id="notas-bibliogr&aacute;ficas" class="anchor" href="#notas-bibliogr%C3%A1ficas" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notas bibliogr&aacute;ficas</h2> 
 <p>Coronel Vallejos no existe, es el pueblo ficticio donde transcurre <em>La traici&oacute;n de Rita Hayworth</em>, una novela de Manuel Puig.</p> 
 <h2> <a id="un-comentario-para-la-implementaci&oacute;n" class="anchor" href="#un-comentario-para-la-implementaci%C3%B3n" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Un comentario para la implementaci&oacute;n</h2> 

@@ -5,6 +5,7 @@ class Pedido {
 	var property tiempoMaximo
 	var property cantidadDePasajeros
 	var property coloresIncompatibles = #{}
+	var property registroDePedidos = []
 	
 	method velocidadRequerida(){ return  distancia/tiempoMaximo}
 	method puedeSatisfacerPedido(auto){ 
@@ -14,5 +15,7 @@ class Pedido {
 	}
 	method relajar() = tiempoMaximo + 1
 	method acelerar() = tiempoMaximo - 1
-
+	method AgregarPedido(pedido) {return  registroDePedidos.add(pedido)}
+	method QuitarPedido(pedido) { return registroDePedidos.remove(pedido)}
+		
 }

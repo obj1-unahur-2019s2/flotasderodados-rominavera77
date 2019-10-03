@@ -1,3 +1,5 @@
+import wollok.game.*
+
 class ChevroletCorsa{
   	var property color
   	
@@ -35,7 +37,6 @@ object trafic {
 }
 
 /* una opción: clase Motor
-
 	
 	var property pulenta
 	method peso(){
@@ -65,12 +66,25 @@ class Interior {
 object bataton {
   method peso() { return 500 }
   method capacidad(){ }
+  method velocidadMaxima(){ return 80}
+  
 }
 object pulenta {
-  // ...
+  method peso() { return 800 }
+  method capacidad(){ }
+  method velocidadMaxima(){ return 130}
 }
 
+object comodo {
+	method peso() { return 700}
+	method capacidad() { return 5}
+}
 
+object popular {
+	method peso() { return 1000}
+	method capacidad() { return 12}
+	
+}
 class AutoEspecial {
 	var property peso
 	var property color
@@ -83,6 +97,7 @@ class AutoEspecial {
 class Dependencia {
 	var property empleados
 	var property flotaDeRodados = []
+	var property pedidosDeTraslado = []
 	
 	method agregarAFlota(rodado){ flotaDeRodados.add(rodado)}
 	method quitarDeFlota(rodado) { flotaDeRodados.remove(rodado)}
@@ -106,7 +121,20 @@ class Dependencia {
 	method esGrande(){
 		return flotaDeRodados.size() >= 5 and empleados.size() >= 40
 	}
-	
+	method agregarPedido(pedido) {return  pedidosDeTraslado.add(pedido)}
+	method quitarPedido(pedido) { return pedidosDeTraslado.remove(pedido)}
+	method totalPasajerosEnPedidos() {
+		return pedidosDeTraslado.sum({p => p.cantidadDePasajeros()})
+	}
+	method PedidosQueNoPuedeSatisfacer() { 
+		return pedidosDeTraslado.filter({pedido => not pedido.puedeSatisfacerPedido()})
+	}
+	method pedidoTieneColorIncompatible(color) {
+		return pedidosDeTraslado.all({pedido => pedido.coloresIncompatibles()})
+	}
+	method relajar(){
+		return pedidosDeTraslado.map({pedido => pedido.tiempoMaximo() + 1})
+	}
 }
 
 

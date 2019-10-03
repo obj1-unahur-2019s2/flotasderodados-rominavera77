@@ -4,6 +4,7 @@ import rodados.*
 	
 describe "depencias" {
 	
+	// Dependencia Deportes
 	var cachito = new ChevroletCorsa(color=rojo)
 	var deportes = new Dependencia(empleados=45)
 	var corsa1 = new ChevroletCorsa(color=verde)
@@ -11,7 +12,7 @@ describe "depencias" {
 	var kwid = new RenaultKwid()
 	var autoEspecial1 = new AutoEspecial(capacidad=5, velocidadMaxima=160, peso=1200, color=beige)
 	
-	
+	// Dependencia Cultura
 	var cultura = new Dependencia(empleados=21)
 	var kwid1 = new RenaultKwid()
 	var kwid2 = new RenaultKwid()
@@ -19,6 +20,7 @@ describe "depencias" {
                                   
 
 fixture {
+	
 	
 	deportes.agregarAFlota(cachito)
 	deportes.agregarAFlota(corsa1)
@@ -31,8 +33,8 @@ fixture {
 	cultura.agregarAFlota(kwid2)
 	cultura.agregarAFlota(kwid3)
 	trafic.motor(bataton)
-	trafic.interior()
-	cultura.agregarAFlota(trafic())
+	trafic.interior(popular)
+	cultura.agregarAFlota(trafic)
 	
 	
 }
