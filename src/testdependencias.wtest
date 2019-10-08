@@ -9,7 +9,7 @@ describe "depencias" {
 	var deportes = new Dependencia(empleados=45)
 	var corsa1 = new ChevroletCorsa(color=verde)
 	var corsa2 = new ChevroletCorsa(color=azul)
-	var kwid = new RenaultKwid()
+	var kwid = new RenaultKwid(tieneTanqueAdicional=true)
 	var autoEspecial1 = new AutoEspecial(capacidad=5, velocidadMaxima=160, peso=1200, color=beige)
 	
 	// Dependencia Cultura

@@ -95,7 +95,7 @@ class AutoEspecial {
 
 // sería como el depósito, maneja una colección de rodados
 class Dependencia {
-	var property empleados
+	var property empleados 
 	var property flotaDeRodados = []
 	var property pedidosDeTraslado = []
 	
@@ -116,10 +116,10 @@ class Dependencia {
 		return flotaDeRodados.max({rodado => rodado.velocidadMaxima()}).color()
 	}
 	method capacidadFaltante(){
-		return 	empleados.size() - flotaDeRodados.sum({rodado => rodado.capacidad()})  
+		return 	(empleados - flotaDeRodados.sum({rodado => rodado.capacidad()}))
 	}
 	method esGrande(){
-		return flotaDeRodados.size() >= 5 and empleados.size() >= 40
+		return flotaDeRodados.size() >= 5 and empleados >= 40
 	}
 	method agregarPedido(pedido) {return  pedidosDeTraslado.add(pedido)}
 	method quitarPedido(pedido) { return pedidosDeTraslado.remove(pedido)}
